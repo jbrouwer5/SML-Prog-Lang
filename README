@@ -1,0 +1,26 @@
+Small Programming Language in SML 
+
+t ::= n             // n is one or more digits, a non-negative number
+    | T             // true
+    | F             // false
+    | ()            // unit
+    | x             // variables are one or more lowercase letters
+    | [lam x tau t] // typed lambdas, which now include the syntactic tag "lam"
+    | (t t)         // applications
+    | (fix t)       // fix, for recursion
+    | {x t t}       // scoped local variables
+    | [t?t:t]       // conditionals
+    | [t+t]         // addition
+    | [t-t]         // subtraction
+    | [t*t]         // multiplication
+    | [t==t]        // integer equality
+    | [t<t]         // less than
+    | !t            // logical negation
+    | [~l t ... ~l t] // records; the dots are not literal syntax, just more stuff
+    | (~l t)        // record field selection
+
+tau ::= I   // integer
+      | B   // boolean
+      | U   // unit
+      | (tau -> tau) // function types
+      | (~l tau ... ~l tau) // record types; dots not literal
